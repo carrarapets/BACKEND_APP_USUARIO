@@ -9,17 +9,73 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
 model User {
   id        Int      @id @default(autoincrement())
   createdAt DateTime @default(now())
   email     String   @unique
-  nome    String?
-  sobrenome    String?
-  cpf     String   @unique
-  rg     String   @unique
-  valido Boolean
-  foto String?
-  celular String?
-  password String?
+  nome      String?
+  sobrenome String?
+  cpf       String   @unique
+  rg        String   @unique
+  valido    Boolean
+  foto      String?
+  celular   String?
+  password  String?
+}
 
+model Pet {
+  id            Int     @id @default(autoincrement())
+  nome          String?
+  peso          Float
+  comportamento String?
+  foto          String?
+  sexo          String?
+  raca          String?
+  especia       String?
+}
+
+model Viagem {
+  id          Int      @id @default(autoincrement())
+  chat        String?
+  update_date DateTime @default(now())
+  pontuacao   String?
+}
+
+model Pedido {
+  id                Int      @id @default(autoincrement())
+  create_date       DateTime @default(now())
+  preco             Float
+  final             DateTime
+  inicio            DateTime
+  cancelpass        Boolean
+  cancelmoto        Boolean
+  destino           Float
+  localizacao_atual Float
+}
+
+model Motorista {
+  id                Int      @id @default(autoincrement())
+  create_date       DateTime @default(now())
+  CNH               String?  @unique
+  ant_criminal      String?
+  avaliacao         String?
+  validade_cnh      DateTime @unique
+  detalhes_corridas String?
+}
+
+model Convite {
+  id          Int      @id @default(autoincrement())
+  create_date DateTime @default(now())
+  email       String?
+  ativo       Boolean
+}
+
+model Carro {
+  id      Int     @id @default(autoincrement())
+  placa   String? @unique
+  modelo  String?
+  marca   String? @unique
+  renavam String? @unique
+  cor     String?
 }
