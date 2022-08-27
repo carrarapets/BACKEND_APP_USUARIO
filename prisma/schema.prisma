@@ -22,6 +22,8 @@ model User {
   foto      String?
   celular   String?
   password  String?
+  pets      Pet[]
+  pedidos   Pedido[]
 }
 
 model Pet {
@@ -33,6 +35,8 @@ model Pet {
   sexo          String?
   raca          String?
   especia       String?
+  user          User    @relation(fields: [userId], references: [id])
+  userId        Int     @unique
 }
 
 model Viagem {
@@ -40,11 +44,13 @@ model Viagem {
   chat        String?
   update_date DateTime @default(now())
   pontuacao   String?
+  pedido      Pedido   @relation(fields: [pedidoId], references: [id])
+  pedidoId    Int      @unique
 }
 
 model Pedido {
-  id                Int      @id @default(autoincrement())
-  create_date       DateTime @default(now())
+  id                Int       @id @default(autoincrement())
+  create_date       DateTime  @default(now())
   preco             Float
   final             DateTime
   inicio            DateTime
@@ -52,30 +58,42 @@ model Pedido {
   cancelmoto        Boolean
   destino           Float
   localizacao_atual Float
+  user              User      @relation(fields: [userId], references: [id])
+  userId            Int
+  motorista         Motorista @relation(fields: [motoristaId], references: [id])
+  motoristaId       Int       @unique
+  viagem            Viagem[]
 }
 
 model Motorista {
-  id                Int      @id @default(autoincrement())
-  create_date       DateTime @default(now())
-  CNH               String?  @unique
+  id                Int       @id @default(autoincrement())
+  create_date       DateTime  @default(now())
+  CNH               String?   @unique
   ant_criminal      String?
   avaliacao         String?
-  validade_cnh      DateTime @unique
+  validade_cnh      DateTime  @unique
   detalhes_corridas String?
+  pedidos           Pedido[]
+  carro             Carro[]
+  convite           Convite[]
 }
 
 model Convite {
-  id          Int      @id @default(autoincrement())
-  create_date DateTime @default(now())
+  id          Int       @id @default(autoincrement())
+  create_date DateTime  @default(now())
   email       String?
   ativo       Boolean
+  motorista   Motorista @relation(fields: [motoristaId], references: [id])
+  motoristaId Int       @unique
 }
 
 model Carro {
-  id      Int     @id @default(autoincrement())
-  placa   String? @unique
-  modelo  String?
-  marca   String? @unique
-  renavam String? @unique
-  cor     String?
+  id          Int       @id @default(autoincrement())
+  placa       String?   @unique
+  modelo      String?
+  marca       String?   @unique
+  renavam     String?   @unique
+  cor         String?
+  motorista   Motorista @relation(fields: [motoristaId], references: [id])
+  motoristaId Int       @unique
 }
