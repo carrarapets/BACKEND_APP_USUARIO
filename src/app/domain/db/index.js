@@ -1,6 +1,7 @@
 const {config} = require("../config")
 const {Client} = require("pg")
 const {logger} = require("../logger")
+//const {Client} = require("prisma")
 
 class PostgresDBFactory{
     client;

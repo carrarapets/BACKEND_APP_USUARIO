@@ -2,6 +2,9 @@ const express = require("express")
 const cors = require("cors")
 const {config} = require("../config")
 const {logger} = require("../logger");
+const pg = require('pg');
+const rotasUsuario = require("../routes/user");
+
 
 class AppHttpServerFactory{
 
@@ -14,6 +17,7 @@ class AppHttpServerFactory{
 
             app.use(cors())
             app.use(express.json())
+            app.use(rotasUsuario)
 
             app.listen(this.port, ()=> {
                logger.info('HTTP SERVER STARTED ON PORT  '+(this.port))
