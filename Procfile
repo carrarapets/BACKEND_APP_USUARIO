@@ -1,2 +1,0 @@
-web: /BACKEND_APP_USUARIO-web
-worker: /BACKEND_APP_USUARIO-worker
