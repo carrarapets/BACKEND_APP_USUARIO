@@ -31,10 +31,10 @@ describe("Config,", ()=>{
                 exit: jest.fn(),
                 env:{
                     ENV: "dev",
-                    EXPRESS_PORT:"3333" ,
+                    EXPRESS_PORT:"5432" ,
                     SECRET: "secret",
-                    API_URL:"http://localhost:3333",
-                    POSTGRES_DATABASE:"CarraraPets_dbo",
+                    API_URL:"postgresql://postgres:HACKERNAOENTRA@localhost:5432/Carrarapets_dbo",
+                    POSTGRES_DATABASE:"Carrarapets_dbo",
                     POSTGRES_USER:"postgres",
                     POSTGRES_PASSWORD:"HACKERNAOENTRA",
                     POSTGRES_HOST:"localhost",

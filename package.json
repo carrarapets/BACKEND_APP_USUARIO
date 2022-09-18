@@ -1,15 +1,17 @@
 {
   "scripts": {
     "dev": "docker-compose up -d && nodemon",
-    "unit-test": "jest --runInBand --coverage --verbose -c jest.unit.config.js",
-    "migrate": "node-pg-migrate"
+    "unit-test": "jest --runInBand --coverage --verbose -c jest.unit.config.js"
   },
+  "author": "",
+  "license": "ISC",
   "dependencies": {
     "@prisma/client": "^4.2.1",
     "cors": "^2.8.5",
     "docker-compose": "^0.23.17",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
+    "heroku": "^7.63.4",
     "jest": "^28.1.3",
     "nodemon": "^2.0.19",
     "pg": "^8.7.1",

@@ -58,6 +58,12 @@ rotasUsuario.get("/getuser/:id", async(request, response)=>{
     })
     return response.status(200).json(lerUsuario);
 });
+rotasUsuario.get("/", (req, res) =>{
+    res.json({
+       message: "hello word"
+    });
+    return res
+});
 
 rotasUsuario.post("/updateuser/:id", async(request, response)=>{
     const{id} = request.params;

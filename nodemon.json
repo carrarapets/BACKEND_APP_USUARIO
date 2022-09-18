@@ -3,6 +3,6 @@
     "verbose" : false,
     "watch" : ["src"],
     "delay" : 500,
-    "exec" : "node ./src/app/index.js",
+    "exec" : "node src/app/domain/startup/index.js",
     "ext"  : "js"
  }
