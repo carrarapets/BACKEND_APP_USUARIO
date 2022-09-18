@@ -6,7 +6,7 @@ require('dotenv').config();
 //const {Client} = require("prisma")
 
 const isProduction = process.env.NODE_ENV === 'production';
-const connectionString = `postgresql://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_DATABASE}`;
+const connectionString = `postgresql://${process.env.POSTGRES_USER}:${process.env.POSTGRES_PASSWORD}@${process.env.POSTGRES_HOST}:${process.env.POSTGRES_PORT}/${process.env.POSTGRES_DATABASE}`;
 
 
 const pool = new pg.Pool({
