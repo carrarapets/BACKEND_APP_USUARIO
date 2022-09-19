@@ -1,7 +1,7 @@
 const {config} = require("../config")
 const {Client} = require("pg")
 const {logger} = require("../logger")
-const pg = require('pg');
+//const pg = require('pg');
 require('dotenv').config();
 //const {Client} = require("prisma")
 
@@ -9,14 +9,14 @@ const isProduction = process.env.NODE_ENV === 'production';
 const connectionString = `postgresql://${process.env.POSTGRES_USER}:${process.env.POSTGRES_PASSWORD}@${process.env.POSTGRES_HOST}:${process.env.POSTGRES_PORT}/${process.env.POSTGRES_DATABASE}`;
 
 
-const pool = new pg.Pool({
+/*const pool = new pg.Pool({
     connectionString: isProduction ? process.env.DATABASE_URL : connectionString,
     ssl: isProduction,
   }); 
 
   pool.on('connect', () => {
     console.log('Teamwork Database connected successfully!');
-  });
+  });*/
 class PostgresDBFactory{
     client;
     isConnected = false;
