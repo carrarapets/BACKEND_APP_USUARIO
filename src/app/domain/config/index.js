@@ -42,7 +42,8 @@ function validateEnvProvidedConfig(){
     
     if(missingConfigVaribles.length !== 0){
         logger.error("MISSING ENVIROMENT VARIABLE IN CONFIG")
-
+        logger.error(this.API_URL,this.ENV, this.EXPRESS_PORT,
+            this.POSTGRES_DATABASE)
         for (const missingConfigVarible of missingConfigVaribles) {
           logger.error('Missing Variable: ${missingConfigVarible}')
             
