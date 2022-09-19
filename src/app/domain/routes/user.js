@@ -62,7 +62,7 @@ rotasUsuario.get("/", (req, res) =>{
     res.json({
        message: "hello word"
     });
-    return res
+    
 });
 
 rotasUsuario.post("/updateuser/:id", async(request, response)=>{
