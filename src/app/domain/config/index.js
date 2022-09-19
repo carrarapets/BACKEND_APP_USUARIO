@@ -4,7 +4,7 @@ dotenv.config()
 
 const config = {
     ENV: process.env.ENV,
-    EXPRESS_PORT:parseInt(process.env.EXPRESS_PORT, 10)  ,
+    EXPRESS_PORT:process.env.EXPRESS_PORT,
     SECRET: process.env.SECRET,
     API_URL: process.env.API_URL,
     POSTGRES_DATABASE: process.env.POSTGRES_DATABASE,
