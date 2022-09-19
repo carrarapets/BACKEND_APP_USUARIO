@@ -6,9 +6,7 @@ const pg = require('pg');
 const rotasUsuario = require("../routes/user");
 const dotenv = require("dotenv");
 const { response } = require("express");
-const port = normalizePort(process.env.PORT || '3000');
 dotenv.config();
-
 const normalizePort = val => {
     const port = parseInt(val, 10);
   
@@ -20,6 +18,11 @@ const normalizePort = val => {
     }
     return false;
   };
+
+const port = normalizePort(process.env.PORT || '3000');
+
+
+
 
 
 
