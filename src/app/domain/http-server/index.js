@@ -24,7 +24,7 @@ class AppHttpServerFactory{
             app.use(rotasUsuario)
             
 
-            app.listen(this.port, ()=> {
+            app.listen(this.port || 8000, ()=> {
                logger.info('HTTP SERVER STARTED ON PORT  '+(this.port))
 
 
