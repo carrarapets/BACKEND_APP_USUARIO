@@ -9,7 +9,7 @@ services:
      - "POSTGRES_PASSWORD=HACKERNAOENTRA"
      - "POSTGRES_DB=Carrarapets_dbo"
      - "POSTGRES_LOCAL=localhost"
-     - "POSTGRES_PORT=5234"
+     - "POSTGRES_PORT=5432"
     ports: 
      - 5432:5432
     volumes:
