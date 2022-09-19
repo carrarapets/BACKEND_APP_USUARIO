@@ -1,1 +1,1 @@
-web: node src/app/domain/startup/index.js
+web: node src/app/index.js
