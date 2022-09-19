@@ -12,7 +12,7 @@ dotenv.config();
 
 class AppHttpServerFactory{
 
-    port = config.EXPRESS_PORT;
+    
 
     start(){
 
@@ -22,9 +22,9 @@ class AppHttpServerFactory{
             app.use(cors())
             app.use(express.json())
             app.use(rotasUsuario)
+            const port = 8000 || process.env.EXPRESS_PORT;
             
-
-            app.listen(this.port || 8000, ()=> {
+            app.listen(port, ()=> {
                logger.info('HTTP SERVER STARTED ON PORT  '+(this.port))
 
 
