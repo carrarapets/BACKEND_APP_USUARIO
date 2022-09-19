@@ -9,9 +9,9 @@ services:
      - "POSTGRES_PASSWORD=HACKERNAOENTRA"
      - "POSTGRES_DB=Carrarapets_dbo"
      - "POSTGRES_LOCAL=localhost"
-     - "POSTGRES_PORT=5003"
+     - "POSTGRES_PORT=5234"
     ports: 
-     - 5003:5003
+     - 5432:5432
     volumes:
      - database-volume:\Program Files\PostgreSQL\14\data
   
