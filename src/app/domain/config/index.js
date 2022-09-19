@@ -3,9 +3,9 @@ const {logger} = require("../logger");
 dotenv.config()
 
 const config = {
-    ENV: PRODUCTION,
+    ENV: "PRODUCTION",
     EXPRESS_PORT:5432,
-    SECRET: SECRET,
+    SECRET: "SECRET",
     API_URL: "postgres://hhkaraiurohita:92aa7f1eb10c78458370cb8ee5256f28a2732f3a57f79475a85e7cc25a3a0fa6@ec2-34-200-205-45.compute-1.amazonaws.com:5432/d3q042tprckimk",
     POSTGRES_DATABASE: "d3q042tprckimk",
     POSTGRES_USER: "hhkaraiurohita",
