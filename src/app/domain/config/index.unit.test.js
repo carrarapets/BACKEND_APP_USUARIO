@@ -30,15 +30,15 @@ describe("Config,", ()=>{
             global.process ={
                 exit: jest.fn(),
                 env:{
-                    ENV: "dev",
-                    EXPRESS_PORT:"5003" ,
+                    ENV: "production",
+                    PORT:"5003" ,
                     SECRET: "secret",
                     API_URL:"postgresql://postgres:HACKERNAOENTRA@localhost:5003/Carrarapets_dbo",
                     POSTGRES_DATABASE:"Carrarapets_dbo",
                     POSTGRES_USER:"postgres",
                     POSTGRES_PASSWORD:"HACKERNAOENTRA",
                     POSTGRES_HOST:"localhost",
-                    POSTGRES_PORT:"5003"
+                    POSTGRES_PORT:"5432"
 
                 }
             }

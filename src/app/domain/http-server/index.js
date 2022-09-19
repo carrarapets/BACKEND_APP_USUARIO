@@ -7,20 +7,7 @@ const rotasUsuario = require("../routes/user");
 const dotenv = require("dotenv");
 const { response } = require("express");
 dotenv.config();
-const normalizePort = val => {
-    const port = parseInt(val, 10);
-  
-    if (isNaN(port)) {
-      return val;
-    }
-    if (port >= 0) {
-      return port;
-    }
-    return false;
-  };
-
-const port = normalizePort(process.env.PORT || '3000');
-
+const PORT = process.env.PORT || 3000;
 
 
 
@@ -38,8 +25,8 @@ class AppHttpServerFactory{
             app.use(rotasUsuario)
             
             
-            app.listen(port, ()=> {
-               logger.info('HTTP SERVER STARTED ON PORT  '+(this.port))
+            app.listen(PORT, ()=> {
+               logger.info('HTTP SERVER STARTED ON PORT  '+(this.PORT))
                 resolve()
             })
         })
