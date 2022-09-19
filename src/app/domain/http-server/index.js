@@ -22,7 +22,7 @@ class AppHttpServerFactory{
             app.use(cors())
             app.use(express.json())
             app.use(rotasUsuario)
-            const port = 8000 || process.env.EXPRESS_PORT;
+            const port = process.env.EXPRESS_PORT || 8000;
             
             app.listen(port, ()=> {
                logger.info('HTTP SERVER STARTED ON PORT  '+(this.port))
