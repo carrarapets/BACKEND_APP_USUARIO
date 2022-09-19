@@ -6,13 +6,12 @@ const pg = require('pg');
 const rotasUsuario = require("../routes/user");
 const dotenv = require("dotenv");
 const { response } = require("express");
-const port = 8000 || config.EXPRESS_PORT;
+const port = config.EXPRESS_PORT || 8000;
 dotenv.config();
 
 
 
 class AppHttpServerFactory{
-
 
     start(){
 
@@ -24,7 +23,7 @@ class AppHttpServerFactory{
             app.use(rotasUsuario)
             
             
-            app.listen(port, ()=> {
+            app.listen(this.port, ()=> {
                logger.info('HTTP SERVER STARTED ON PORT  '+(this.port))
 
 
