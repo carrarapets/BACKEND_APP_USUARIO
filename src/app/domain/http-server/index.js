@@ -6,7 +6,7 @@ const pg = require('pg');
 const rotasUsuario = require("../routes/user");
 const dotenv = require("dotenv");
 const { response } = require("express");
-const port = config.EXPRESS_PORT || 8000;
+const port = process.env.EXPRESS_PORT || 8000;
 dotenv.config();
 
 
